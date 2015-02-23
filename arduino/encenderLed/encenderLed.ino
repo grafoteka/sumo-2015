@@ -60,6 +60,7 @@ void loop()
 
   while(Serial3.available()){
     delay(10);
+    Serial.println("Esperando cliente");
     if(Serial3.available() > 0){
       char c = Serial3.read();
       dato += c;
@@ -74,9 +75,9 @@ void loop()
      if(dato == "0"){
       Serial.println("Apagar LED");
       digitalWrite(led, LOW);
-    }   
+    }  
+   dato = ""; 
     
   }
-
 }
 
